@@ -5,12 +5,12 @@ app = Flask(__name__)
 model = pickle.load(open("knn.pkl", "rb"))
 
 
-@app.route("/")
+@app.route("/", methods=["GET"])
 def modelo():
     return render_template("index.html")
 
 
-@app.route("/predict", methods=["POST"])
+@app.route("/", methods=["POST"])
 def predict():
     minTemp = float(request.form["MinTemp"])
     maxTemp = float(request.form["MaxTemp"])
@@ -25,11 +25,11 @@ def predict():
         [[minTemp, maxTemp, rainFall, h9am, h3pm, p9am, p3pm, t9am, t3pm]]
     )
     if prediction == 0:
-        prediction = "No"
+        prediction = "No lloverá mañana"
     else:
-        prediction = "Sí"
+        prediction = "Sí lloverá mañana"
     return render_template("index.html", prediction_text=prediction)
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(port=5500, debug=True)
