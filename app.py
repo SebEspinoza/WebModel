@@ -12,22 +12,13 @@ def modelo():
 
 @app.route("/", methods=["POST"])
 def predict():
-    minTemp = float(request.form["MinTemp"])
-    maxTemp = float(request.form["MaxTemp"])
-    rainFall = float(request.form["Rainfall"])
-    h9am = float(request.form["Humidity9am"])
-    h3pm = float(request.form["Humidity3pm"])
-    p9am = float(request.form["Pressure9am"])
-    p3pm = float(request.form["Pressure3pm"])
-    t9am = float(request.form["Temp9am"])
-    t3pm = float(request.form["Temp3pm"])
-    prediction = model.predict(
-        [[minTemp, maxTemp, rainFall, h9am, h3pm, p9am, p3pm, t9am, t3pm]]
-    )
+    cantidad = float(request.form["cantidad"])
+    mes = float(request.form["mes"])
+    prediction = model.predict([[cantidad, mes]])
     if prediction == 0:
         prediction = "No lloverá mañana"
     else:
-        prediction = "Sí lloverá mañana"
+        prediction = print(prediction)
     return render_template("index.html", prediction_text=prediction)
 
 

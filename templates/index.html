@@ -17,24 +17,16 @@
                 <b>
                     <p class="text-4xl text-center py-10">Predicción Lluvia</p>
                 </b>
-                <input type="number" step="0.01" name="MinTemp" required="required" placeholder="MinTemp"
+                <input type="number" step="0.01" name="cantidad" required="required" placeholder="Cantidad"
                     class="input input-bordered">
-                <input type="number" step="0.01" name="MaxTemp" required="required" placeholder="MaxTemp"
+                <input type="string" step="0.01" name="mes" required="required" placeholder="Me"
                     class="input input-bordered ">
-                <input type="number" step="0.01" name="Rainfall" required="required" placeholder="Rainfall"
-                    class="input input-bordered ">
-                <input type="number" step="0.01" name="Humidity9am" required="required" placeholder="Humidity9am"
-                    class="input input-bordered ">
-                <input type="number" step="0.01" name="Humidity3pm" required="required" placeholder="Humidity3pm"
-                    class="input input-bordered ">
-                <input type="number" step="0.01" name="Pressure9am" required="required" placeholder="Pressure9am"
-                    class="input input-bordered ">
-                <input type="number" step="0.01" name="Pressure3pm" required="required" placeholder="Pressure3pm"
-                    class="input input-bordered ">
-                <input type="number" step="0.01" name="Temp9am" required="required" placeholder="Temp9am"
-                    class="input input-bordered ">
-                <input type="number" step="0.01" name="Temp3pm" required="required" placeholder="Temp3pm"
-                    class="input input-bordered ">
+                <select name="cars" id="cars">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                </select>
                 <button type="submit" class="btn btn-success btn-active">Send</button>
                 {%if prediction_text %}
                 <b>
