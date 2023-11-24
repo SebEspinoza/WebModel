@@ -18,7 +18,7 @@ def predict():
     if prediction == 0:
         prediction = "No lloverá mañana"
     else:
-        prediction = print(prediction)
+        prediction = "hola"
     return render_template("index.html", prediction_text=prediction)
 
 
