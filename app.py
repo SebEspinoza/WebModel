@@ -14,11 +14,8 @@ def modelo():
 def predict():
     cantidad = float(request.form["cantidad"])
     mes = float(request.form["mes"])
-    prediction = model.predict([[cantidad, mes]])
-    if prediction == 0:
-        prediction = "No lloverá mañana"
-    else:
-        prediction = "hola"
+    prediction = model.predict([[cantidad, mes]])[0]
+    print(prediction)
     return render_template("index.html", prediction_text=prediction)
 
 
