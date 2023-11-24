@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 import pickle
 
 app = Flask(__name__)
-model = pickle.load(open("modelos", "rb"))
+model = pickle.load(open("modelos.pkl", "rb"))
 
 
 @app.route("/", methods=["GET"])
