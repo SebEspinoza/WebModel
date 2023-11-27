@@ -15,8 +15,12 @@ def predict():
     cantidad = float(request.form["cantidad"])
     mes = float(request.form["mes"])
     prediction = model.predict([[cantidad, mes]])[0]
-    print(prediction)
-    return render_template("index.html", prediction_text=prediction)
+
+    # Adding the prediction text
+    prediction_text = f"La cantidad de stock necesaria para el siguiente mes del seleccionado es {prediction}"
+
+    print(prediction_text)
+    return render_template("index.html", prediction_text=prediction_text)
 
 
 if __name__ == "__main__":
