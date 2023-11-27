@@ -12,16 +12,16 @@
 <body class="bg-[#fff0c9] h-screen">
     <div class="flex rounded-box justify-center">
         <form action="{{url_for('predict')}}" method="post"
-            class="bg-[#512800] shadow-md px-8 pt-6 pb-8 mb-4 rounded-box">
+            class="bg-[#512800] shadow-md px-8 pt-6 pb-8 mb-4 rounded-box w-screen">
             <div class="flex flex-col items-center">
                 <b>
                     <p class="text-[#fff0c9] text-4xl text-center py-10">Predicción</p>
                 </b>
-                <p class="text-[#fff0c9] text-lg text-center py-10">Cantidad actual vendida:</p>
+                <p class="text-[#fff0c9] text-lg text-center">Cantidad actual vendida:</p>
                 <input type="number" step="1" name="cantidad" required="required" placeholder="Cantidad"
-                    class="bg-[#fff0c9] input input-bordered text-black">
-                <p class="text-[#fff0c9] text-lg text-center py-10">Mes:</p>
-                <select name="mes" id="mes" class="bg-[#fff0c9] text-black input input-bordered">
+                    class="bg-[#fff0c9] input input-bordered text-black w-1/4">
+                <p class="text-[#fff0c9] text-lg text-center">Mes:</p>
+                <select name="mes" id="mes" class="bg-[#fff0c9] text-black input input-bordered w-1/4">
                     <option value="1">Enero</option>
                     <option value="2">Febrero</option>
                     <option value="3">Marzo</option>
